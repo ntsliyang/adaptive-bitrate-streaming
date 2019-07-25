@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="849189bf-c49e-4032-81f0-a1a4f224fdb0" name="Default Changelist" comment="add other papers and readme">
-      <change beforePath="$PROJECT_DIR$/papers/07393865.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/08698706.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/1704.08535.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/1805.02482.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/Real-world Video Adaptation with Reinforcement Learning.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/p197-Mao.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/p44-akhtar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/papers/wang03-reprint.pdf" beforeDir="false" />
-    </list>
+    <list default="true" id="849189bf-c49e-4032-81f0-a1a4f224fdb0" name="Default Changelist" comment="add other papers and readme" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +46,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -83,12 +75,12 @@
       <option name="presentableId" value="Default" />
       <updated>1564039693704</updated>
       <workItem from="1564039695371" duration="385000" />
-      <workItem from="1564043058832" duration="1150000" />
+      <workItem from="1564043058832" duration="1756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1535000" />
+    <option name="totallyTimeSpent" value="2141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
