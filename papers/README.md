@@ -12,3 +12,5 @@
 |[BOLA: Near-Optimal Bitrate Adaptation for Online Videos](https://arxiv.org/abs/1601.06748)|`bola.pdf`|
 |[A Control-Theoretic Approach for Dynamic Adaptive Video Streaming over HTTP](https://users.ece.cmu.edu/~vsekar/papers/sigcomm15_mpcdash.pdf)|`mpc.pdf`|
 | [Neural Adaptive Video Streaming with Pensieve](https://dl.acm.org/citation.cfm?id=3098843) | `pensieve.pdf` |
+|[Asynchronous Methods for Deep Reinforcement Learning](https://arxiv.org/pdf/1602.01783.pdf)|`a3c.pdf`|
+|[Actor-Critic Algorithms](https://papers.nips.cc/paper/1786-actor-critic-algorithms.pdf)|`actor-critic.pdf`|
