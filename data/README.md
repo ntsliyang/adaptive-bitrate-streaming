@@ -1,12 +1,12 @@
 # Dataset
 
 ## [`Pensive-master`](Pensieve-traces)
-- [`cooked traces`](Pensieve-traces/cooked_traces)
+- [`cooked_traces`](Pensieve-traces/cooked_traces)
 - [`test_sim_traces`](Pensieve-traces/test_sim_traces)
 - [`train_sim_traces`](Pensieve-traces/train_sim_traces)
 
 
-## Federal Communications Commission (FCC) [**note that this will initiate download because of large file sizes**]
+## [Federal Communications Commission (FCC)](https://www.fcc.gov/general/measuring-broadband-america) [**note that this will initiate download because of large file sizes**]
 
 - [`data-raw-2017-jan.tar.gz`](http://data.fcc.gov/download/measuring-broadband-america/2017/data-raw-2017-jan.tar.gz)
 - [`data-raw-2017-feb.tar.gz`](http://data.fcc.gov/download/measuring-broadband-america/2017/data-raw-2017-feb.tar.gz)
@@ -21,7 +21,7 @@
 - [`data-raw-2017-nov.tar.gz`](http://data.fcc.gov/download/measuring-broadband-america/2017/data-raw-2017-nov.tar.gz)
 - [`data-raw-2017-dec.tar.gz`](http://data.fcc.gov/download/measuring-broadband-america/2017/data-raw-2017-dec.tar.gz)
 
-## [Norway HSDPA bandwidth logs](home.ifi.uio.no/)
+## [Norway HSDPA bandwidth logs](home.ifi.uio.no/paalh/dataset/hsdpa-tcp-logs/)
 - [`bus.ljansbakken-oslo`](home.ifi.uio.no/paalh/dataset/hsdpa-tcp-logs/bus.ljansbakken-oslo)
 - [`car.aarnes-elverum`](home.ifi.uio.no/paalh/dataset/hsdpa-tcp-logs/car.aarnes-elverum)
 - [`car.oslo-grimstad`](home.ifi.uio.no/paalh/dataset/hsdpa-tcp-logs/car.oslo-grimstad)
