@@ -1,6 +1,12 @@
 # Adapative Bitrate Streaming
 
-## Setup 
+## Objectives 
+- [v1] add three buttons (smooth, balanced, high-quality) and charts to HTML 
+- [v2] limit the network bandwidth and compare the changes before and after
+- [v3] retrain the model with 9 levels of qualities
+
+
+## Setup
 
 ### Apache Web Server
 
