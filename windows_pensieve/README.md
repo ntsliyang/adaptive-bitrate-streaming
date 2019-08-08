@@ -14,5 +14,20 @@ pip install selenium
 ```
   
 ## 其他注意事项  
+- 需要把apache24中httpd.conf配置文件中默认的主页改为我们的pensieve_master的路径，然后更改run_vedio.py中url改为:
+```
+url = 'http://localhost:8080/video_server/dash.js/samples/dash-if-reference-player/index.html'
+```
 
+## 如何开启我们吊炸天的model  
+- 1.使用cmd打开apache服务器（进入bin目录下）
+```
+net start apache2.4
+```
+- 2.打开rl_server_no_training  
+- 3.打开real_exp/run_vedio.py,即可自动弹出网页
 
+### 最后补充一句：
+### 太强了！！！
+## 太强了！！！
+# 太强了！！！
