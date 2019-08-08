@@ -25,7 +25,7 @@ url = 'http://localhost:8080/video_server/dash.js/samples/dash-if-reference-play
 net start apache2.4
 ```
 - 2.打开rl_server_no_training  
-- 3.打开real_exp/run_video.py,即可自动弹出网页
+- 3.打开real_exp/run_video.py,即可自动弹出网页。或者打开samples/dash-if-reference-player/index.html，再打开浏览器即可
 
 ### 最后补充一句：
 ### 太强了！！！
