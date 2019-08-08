@@ -9,6 +9,6 @@
 >https://blog.csdn.net/Booboochen/article/details/80531155  
 把下载的压缩文件解压到C:\Program Files (x86)\Google\Chrome\Application（每一个都不要少），之后最好重启一下电脑，还不行的话，就把这个文件拷贝到本地的python路径下
 如果selenium报错：  
-'''
+```
 pip install selenium
-'''
+```
