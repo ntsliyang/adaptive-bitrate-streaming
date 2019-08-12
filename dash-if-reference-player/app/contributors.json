@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "name": "DeeCamp",
+      "logo": "app/img/deecamp.jpg",
+      "link": "http://deecamp.chuangxin.com/"
+    },
+    {
+      "name": "Kuaishou",
+      "logo": "app/img/kuaishou.png",
+      "link": "http://www.kuaishou.com"
+    },
+    {
+      "name": "Peking University",
+      "logo": "app/img/pku.png",
+      "link": "https://pku.edu.cn"
+    },
+    {
+      "name": "Beijing University of Posts and Telecommunication",
+      "logo": "app/img/bupt.png",
+      "link": "https://www.bupt.edu.cn"
+    },
+    {
+      "name": "Beihang University",
+      "logo": "app/img/buaa.gif",
+      "link": "https://www.buaa.edu.cn"
+    },
+    {
+      "name": "Communication University of China",
+      "logo": "app/img/cuc.png",
+      "link": "http://www.cuc.edu.cn/"
+    },
+    {
+      "name": "University of Southern California",
+      "logo": "app/img/usc.png",
+      "link": "https://www.usc.edu/"
+    }
+  ]
+}
