@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dash.js Rocks haha</title>
+    </head>
+    <body>
+        <div>
+            <video id="videoplayer" controls="true"></video>
+        </div>
+	<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+        <script>
+            (function(){
+                var url = "./Manifest.mpd";
+                var player = dashjs.MediaPlayer().create();
+                // var context = new Dash.di.DashContext();
+                //var player = new MediaPlayer(context);
+                player.initialize(document.querySelector("#videoplayer"), url, true);
+            })();
+        </script>
+    </body>
+</html>

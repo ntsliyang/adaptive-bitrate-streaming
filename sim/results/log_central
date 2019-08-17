@@ -1,0 +1,9 @@
+WARNING:tensorflow:From /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tflearn/initializations.py:119: UniformUnitScaling.__init__ (from tensorflow.python.ops.init_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.initializers.variance_scaling instead with distribution=uniform to get equivalent behavior.
+WARNING:tensorflow:Error encountered when serializing data_preprocessing.
+Type is unsupported, or the types of the items don't match field type in CollectionDef.
+'NoneType' object has no attribute 'name'
+WARNING:tensorflow:Error encountered when serializing data_augmentation.
+Type is unsupported, or the types of the items don't match field type in CollectionDef.
+'NoneType' object has no attribute 'name'
