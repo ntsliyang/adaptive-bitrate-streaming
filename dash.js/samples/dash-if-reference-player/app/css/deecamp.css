@@ -52,11 +52,14 @@ a:hover {
     width: 91%;
 }
 
+#commit-info {
+    font-size: smaller;
+}
+
 /****************************
         OPTIONS PANEL
 *****************************/
 .options-show {
-    /*height: 200px;*/
     transition-property: all;
     transition-duration: .5s;
 }
@@ -78,6 +81,10 @@ a:hover {
     padding: 5px;
     min-height: 230px;
     float: left;
+}
+
+.options-label {
+    margin-left: 4px;
 }
 
 .options-item-body input,
@@ -103,7 +110,7 @@ a:hover {
 }
 
 .options-item-body {
-    width: 230px;
+    width: 200px;
     height: 145px;
     margin: 5px;
 }
@@ -126,15 +133,21 @@ a:hover {
 
 .col-md-9 video {
     width: 100%;
+    height: auto;
+    margin: auto;
 }
 
 .col-md-9 {
+    width: 65%;
     padding-top: 15px;
 }
 
 .col-md-3 {
-    padding-right: 0px;
-    padding-left: 0px;
+    width: 35%;
+}
+
+.videoContainer {
+    position: relative;
 }
 
 .video-controller {
@@ -164,16 +177,19 @@ a:hover {
 
 .text-success {
     color:black !important;
-    font-size: 1.15em !important;
+    font-size: 1.05em ;
+    white-space: nowrap;
+    overflow: hidden
 }
 
-.text-primary span em {
-    color:#136bfb;
-    font-style: normal;
+.text-primary {
+    color:#428bca;
+    font-weight: 500;
+    padding-right: 3px;
 }
 
-.panel-stats p {
-    display: block;
+.panel-stats label {
+    margin-left: 5px;
 }
 
 .tabs-section .nav > li > a {
@@ -191,37 +207,57 @@ a:hover {
 }
 
 /****************************
+    ERROR MODAL
+*****************************/
+
+.errorModalHeader {
+    background-color: #ff1a1a;
+    color: white;
+}
+
+/****************************
     CHARTING AND CHART TABS
 *****************************/
 
-chart, chart canvas {
+flot{
     display: block;
     width: 100%;
-    height: 185px;
+    height: 200px;
 }
 
 #chart-inventory {
     position:relative;
+    background-color: #ececec;
 }
 
-#statsChart {
-    position: absolute;
-    left: 46px;
-    top: 25px;
-    z-index: 100;
+#chart-inventory2 {
+    position:relative;
+    background-color: #ececec;
 }
 
-.chartControls {
+.legendLabel {
+    color:black;
+    padding-right: 15px;
+    padding-left: 10px;
+}
+
+.chart-controls {
     padding-top: 15px;
     padding-left: 15px;
+    height: 50px;
+    width: 100%;
 }
 
-#chartWrapper{
+div#chart-wrapper{
     padding: 15px;
 }
 
-.chartPanel {
-    background-color: #fff;
+div#chart-wrapper2{
+    padding: 15px;
+}
+
+.chart-panel {
+    background-color: #ffffff;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -232,9 +268,9 @@ button#disable-chart-btn {
 
 div#legend-wrapper {
     margin-top: 10px;
-    margin-left: 80px;
+    margin-left: 10px;
+    float: right;
 }
-
 
 /****************************
         FOOTER SECTION
@@ -250,9 +286,8 @@ div#legend-wrapper {
 }
 
 .footer-text img {
-    height: 100px;
-    padding: 5px;
-    padding-top: 20px;
+    max-height: 40px;
+    max-width: 150px;
 }
 
 .footer-area a {
@@ -281,8 +316,13 @@ div#legend-wrapper {
 }
 
 @media (min-width: 0px) and (max-width: 992px) {
+    .col-md-9 {
+        width: 100%;
+    }
 
     .col-md-3 {
+        width: 100%;
+        padding: 0;
         margin-top: 15px;
     }
 
@@ -297,6 +337,10 @@ div#legend-wrapper {
     #big-title {
         display: none;
     }
+
+    .legend-row {
+        display: none;
+    }
 }
 
 @media (max-width: 530px) {
@@ -304,45 +348,6 @@ div#legend-wrapper {
         display: none;
     }
 }
-
-
-
-@media (min-width: 1201px) and (max-width: 1400px) {
-
-    .col-md-9 {
-        width: 70%;
-    }
-
-    .col-md-3 {
-        width: 30%;
-        padding-left: 15px;
-    }
-}
-
-@media (min-width: 1401px){
-
-    .col-md-9 {
-        width: 75%;
-    }
-
-    .col-md-3 {
-        width: 25%;
-        padding-left: 15px;
-    }
-}
-
-@media (min-width: 993px) and (max-width: 1200px) {
-
-    .col-md-9 {
-        width: 64%;
-    }
-    .col-md-3 {
-        width: 36%;
-        padding-left: 15px;
-    }
-}
-
-
 
 /****************************
 MOBILE SOURCE MENU MODAL LIST
@@ -388,6 +393,13 @@ MOBILE SOURCE MENU MODAL LIST
 /****************************
         DESKTOP MENU
 *****************************/
+.tooltip-inner {
+    white-space:pre-wrap;
+}
+
+.dropdown-menu > li > a {
+    cursor: pointer;
+}
 
 .dropdown-submenu {
     position: relative;
@@ -401,8 +413,6 @@ MOBILE SOURCE MENU MODAL LIST
     -webkit-border-radius: 0 6px 6px 6px;
     -moz-border-radius: 0 6px 6px;
     border-radius: 0 6px 6px 6px;
-    max-height: 300px;
-    overflow: auto;
 }
 
 .dropdown-submenu:hover > .dropdown-menu {
@@ -518,4 +528,10 @@ CONTROL BAR CSS NEEDS TO MOVE INTO THE CONTROL BAR
     list-style: none;
     font-size: .9em !important;
     padding: 0px;
+}
+
+.playAll {
+    background-image: linear-gradient(to bottom, #136bfb 0%, #136bfb 100%) !important;
+    color: #fff;
+    margin-bottom: 7px;
 }

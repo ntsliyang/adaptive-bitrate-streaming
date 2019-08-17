@@ -22,14 +22,13 @@
     <script src="app/lib/bootstrap/js/bootstrap.min.js"></script>
     <!-- http://www.flotcharts.org/ -->
     <script src="app/lib/flot/jquery.flot.min.js"></script>
-    <script src="../../dist/dash.all.debug.js"></script>
+    <script src="../../../dash.all.min.js"></script>
     <!-- App -->
     <script src="../../contrib/akamai/controlbar/ControlBar.js"></script>
     <script src="app/main.js"></script>
 
 </head>
 <body ng-controller="DashController" >
-
     <!-- Mobile Stream Menu-->
     <div class="modal fade" id="streamModal">
         <div class="modal-dialog">
@@ -56,7 +55,7 @@
         <div class="row title-header">
 
             <div class="branding">
-              <a href="http://dashif.org/" target="_blank"><img class="image" src="app/img/if.png"/></a>
+              <a href="http://dashif.org/" target="_blank"><img class="image" src="app/img/deecamp.jpg"/></a>
               <span id="big-title">Reference Client</span>
                 <span ng-bind="version"></span>
             </div>
@@ -137,27 +136,42 @@
                         <input type="checkbox" id="bolaCB" ng-model="bolaSelected" ng-change="toggleBufferOccupancyABR()" ng-checked="false">
                         Buffer Occupancy ABR
                     </label>
+                    <label data-toggle="tooltip" data-placement="right"
+                           title="default RL linear reward model">
+                        <input  type="radio" id="rlLinear" autocomplete="off" name="abrStrategy" checked="checked" ng-click="setrlLinear()" >
+                        RL Pensieve: Linear Reward
+                    </label>
+                    <label  data-toggle="tooltip" data-placement="right"
+                            title="change to log scale reward model">
+                        <input type="radio" id="rlLog" autocomplete="off" name="abrStrategy" ng-click="setrlLog()">
+                        RL Pensieve: Log Scale Reward
+                    </label>
+                    <label  data-toggle="tooltip" data-placement="right"
+                            title="change to HD reward model">
+                        <input type="radio" id="rlHD" autocomplete="off" name="abrStrategy" ng-click="setrlHD()">
+                        RL Pensieve: HD Reward
+                    </label>
                 </div>
             </div>
 
-            <!--<div class="options-item">-->
-                <!--<div class="options-item-title">DRM Options</div>-->
-                <!--<div class="options-item-body">-->
-                    <!--<label>-->
-                        <!--<input type="radio" value="temporary" name="drm" ng-model="drmOptionsValue" ng-change="drmOptionsHandler()" ng-checked="true">-->
-                        <!--temporary-->
-                    <!--</label>-->
-                    <!--<label>-->
-                        <!--<input type="radio" value="persistent-license" name="drm" ng-model="drmOptionsValue" ng-change="drmOptionsHandler()" >-->
-                        <!--persistent-license-->
-                    <!--</label>-->
-                    <!--<label>-->
-                        <!--<input type="radio" value="persistent-release-message" name="drm" ng-model="drmOptionsValue" ng-change="drmOptionsHandler()" >-->
-                        <!--persistent-release-->
-                    <!--</label>-->
-                    <!--<button class="btn btn-primary license" type="button" ng-click="doLicenseFetch()">Pre-Fetch Licenses</button>-->
-                <!--</div>-->
-            <!--</div>-->
+<!--            <div class="options-item">-->
+<!--                <div class="options-item-title">DRM Options</div>-->
+<!--                <div class="options-item-body">-->
+<!--                    <label>-->
+<!--                        <input type="radio" value="temporary" name="drm" ng-model="drmOptionsValue" ng-change="drmOptionsHandler()" ng-checked="true">-->
+<!--                        temporary-->
+<!--                    </label>-->
+<!--                    <label>-->
+<!--                        <input type="radio" value="persistent-license" name="drm" ng-model="drmOptionsValue" ng-change="drmOptionsHandler()" >-->
+<!--                        persistent-license-->
+<!--                    </label>-->
+<!--                    <label>-->
+<!--                        <input type="radio" value="persistent-release-message" name="drm" ng-model="drmOptionsValue" ng-change="drmOptionsHandler()" >-->
+<!--                        persistent-release-->
+<!--                    </label>-->
+<!--                    <button class="btn btn-primary license" type="button" ng-click="doLicenseFetch()">Pre-Fetch Licenses</button>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <div class="options-item">
                 <div class="options-item-title">Track Switch Mode</div>
@@ -179,6 +193,13 @@
                 </div>
             </div>
 
+        </div>
+
+        <!-- BUTTONS for RL MODELS -->
+        <div class="models">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-primary">Primary</button>
         </div>
 
         <!--VIDEO PLAYER / CONTROLS -->

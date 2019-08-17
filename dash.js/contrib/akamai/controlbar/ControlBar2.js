@@ -33,6 +33,7 @@ var ControlBar = function (dashjsMediaPlayer) {
     var player = dashjsMediaPlayer,
         video,
         videoContainer,
+        idSuffix,
         captionMenu = null,
         bitrateListMenu = null,
         trackSwitchMenu = null,
@@ -40,24 +41,41 @@ var ControlBar = function (dashjsMediaPlayer) {
         lastVolumeLevel = NaN,
         seeking = false,
         videoControllerVisibleTimeout = 0,
-        videoController = document.getElementById("videoController"),
-        playPauseBtn = document.getElementById("playPauseBtn"),
-        bitrateListBtn = document.getElementById("bitrateListBtn"),
-        captionBtn = document.getElementById("captionBtn"),
-        trackSwitchBtn = document.getElementById("trackSwitchBtn"),
-        seekbar = document.getElementById("seekbar"),
-        muteBtn = document.getElementById("muteBtn"),
-        volumebar = document.getElementById("volumebar"),
-        fullscreenBtn = document.getElementById("fullscreenBtn"),
-        timeDisplay = document.getElementById("videoTime"),
-        durationDisplay = document.getElementById("videoDuration"),
-
+        videoController,
+        playPauseBtn,
+        bitrateListBtn,
+        captionBtn,
+        trackSwitchBtn,
+        seekbar,
+        muteBtn,
+        volumebar,
+        fullscreenBtn,
+        timeDisplay,
+        durationDisplay;
+        var initControls = function (suffix) {
+            idSuffix = suffix;
+            videoController = document.getElementById(getControlId('videoController'));
+            playPauseBtn = document.getElementById(getControlId('playPauseBtn'));
+            bitrateListBtn = document.getElementById(getControlId('bitrateListBtn'));
+            captionBtn = document.getElementById(getControlId('captionBtn'));
+            trackSwitchBtn = document.getElementById(getControlId('trackSwitchBtn'));
+            seekbar = document.getElementById(getControlId('seekbar'));
+            muteBtn = document.getElementById(getControlId('muteBtn'));
+            volumebar = document.getElementById(getControlId('volumebar'));
+            fullscreenBtn = document.getElementById(getControlId('fullscreenBtn'));
+            timeDisplay = document.getElementById(getControlId('videoTime'));
+            durationDisplay = document.getElementById(getControlId('videoDuration'));
+        };
+    
+        var getControlId = function (id) {
+            return id + (idSuffix ? idSuffix : '');
+        };
 //************************************************************************************
 // PLAYBACK
 //************************************************************************************
 
-        togglePlayPauseBtnState = function () {
-            var span = document.getElementById('iconPlayPause');
+        var togglePlayPauseBtnState = function () {
+            var span = document.getElementById(getControlId('iconPlayPause'));
             if (player.isPaused()) {
                 span.classList.remove('icon-pause')
                 span.classList.add('icon-play');
@@ -284,7 +302,7 @@ var ControlBar = function (dashjsMediaPlayer) {
                 var availableBitrates = {menuType: 'bitrate'};
                 availableBitrates.audio = player.getBitrateInfoListFor("audio");
                 availableBitrates.video = player.getBitrateInfoListFor("video");
-                if (availableBitrates.audio != null && availableBitrates.audio.length > 1 || availableBitrates.video.length > 1) {
+                if (availableBitrates.audio.length > 1 || availableBitrates.video.length > 1) {
                     contentFunc = function (element, index) {
                         return isNaN(index) ? " Auto Switch" : Math.floor(element.bitrate / 1000) + " kbps";
                     }
@@ -347,7 +365,7 @@ var ControlBar = function (dashjsMediaPlayer) {
                         el = createMenuContent(el, getMenuContent(menuType, info.video, contentFunc), 'video', 'video-' + menuType + '-list');
                         setMenuItemsState(getMenuInitialIndex(info.video, menuType, 'video'), 'video-' + menuType + '-list');
                     }
-                    if (info.audio != null && info.audio.length > 1) {
+                    if (info.audio.length > 1) {
                         el.appendChild(createMediaTypeMenu("audio"));
                         el = createMenuContent(el, getMenuContent(menuType, info.audio, contentFunc), 'audio', 'audio-' + menuType + '-list');
                         setMenuItemsState(getMenuInitialIndex(info.audio, menuType, 'audio'), 'audio-' + menuType + '-list');
@@ -580,7 +598,7 @@ var ControlBar = function (dashjsMediaPlayer) {
         setDuration: setDuration,
         setTime: setTime,
 
-        initialize: function () {
+        initialize: function (suffix) {
 
             if (!player) {
                 throw new Error("Please pass an instance of MediaPlayer.js when instantiating the ControlBar Object");
@@ -589,7 +607,7 @@ var ControlBar = function (dashjsMediaPlayer) {
             if (!video) {
                 throw new Error("Please call initialize after you have called attachView on MediaPlayer.js");
             }
-
+            initControls(suffix);
             video.controls = false;
             videoContainer = player.getVideoContainer();
             captionBtn.classList.add("hide");

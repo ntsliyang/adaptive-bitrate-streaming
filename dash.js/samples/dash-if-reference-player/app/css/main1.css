@@ -1,7 +1,11 @@
+body, html {
+  height: 100%;
+}
 body {
-    background: #eee;
-    min-width: 320px;
-    overflow-x: hidden;
+    background: #fffdf4;
+    min-width: 1366px;
+    display: flex;
+    overflow: scroll;
 }
 
 label input {
@@ -19,10 +23,11 @@ a:hover {
 
 .container {
     max-width: 1600px;
+    margin-top: 10px;
 }
 
 .btn:focus {
-    outline: none;
+  outline: none;
 }
 
 /****************************
@@ -56,7 +61,7 @@ a:hover {
         OPTIONS PANEL
 *****************************/
 .options-show {
-    /*height: 200px;*/
+    height: 200px;
     transition-property: all;
     transition-duration: .5s;
 }
@@ -73,10 +78,10 @@ a:hover {
 }
 
 .options-item {
-    background-color: #dfe2e2;
+    background-color: #fffdf4;
     margin: 2px;
     padding: 5px;
-    min-height: 230px;
+    min-height: 195px;
     float: left;
 }
 
@@ -93,7 +98,7 @@ a:hover {
 }
 
 .options-item-title {
-    background-color: #136bfb;
+    background-color: #000;
     height: 20px;
     padding-top: .2rem;
     text-align: center;
@@ -103,7 +108,7 @@ a:hover {
 }
 
 .options-item-body {
-    width: 230px;
+    width: 200px;
     height: 145px;
     margin: 5px;
 }
@@ -118,10 +123,13 @@ a:hover {
     margin-bottom: 7px;
     margin-right: 0px;
     margin-left: 0px;
+    position: relative;
 }
 
 .dash-video-player {
     background-color: #000000;
+    border-radius: 21px;
+    display: flex;
 }
 
 .col-md-9 video {
@@ -168,7 +176,6 @@ a:hover {
 }
 
 .text-primary span em {
-    color:#136bfb;
     font-style: normal;
 }
 
@@ -177,13 +184,13 @@ a:hover {
 }
 
 .tabs-section .nav > li > a {
-    padding: 10px 11px;
+    padding: 5px 10px;
 }
 
 .tab-content {
     margin-left: 1px;
     margin-top: -1px;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .tab-pane {
@@ -246,13 +253,11 @@ div#legend-wrapper {
 }
 
 .footer-area {
-    background-color: #ffffff;
+  background: #fffdf4;
 }
 
 .footer-text img {
-    height: 100px;
-    padding: 5px;
-    padding-top: 20px;
+    height: 40px;
 }
 
 .footer-area a {
@@ -518,4 +523,147 @@ CONTROL BAR CSS NEEDS TO MOVE INTO THE CONTROL BAR
     list-style: none;
     font-size: .9em !important;
     padding: 0px;
+}
+.leftBar {
+  flex-shrink: 0;
+  width: 80px;
+  background: #000;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainContainer {
+  width: 1162px;
+  padding: 30px 30px 60px;
+  margin: 0 auto;
+  position: relative;
+}
+.logo-leftup, .logo-leftbottom {
+  width: 40px;
+}
+.leftmiddle-wrapper {
+  width: 100%;
+}
+.tab-up-wrapper, .tab-bottom-wrapper  {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+.tab-up-wrapper.active {
+  background: #fff;
+}
+.tab-bottom-wrapper.active {
+  background: #fff;
+}
+.tab-up {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/tab-up.png);
+  background-size: cover;
+}
+.tab-up.active {
+  background-image: url(../img/tab-up-active.png);
+}
+.tab-bottom {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/tab-bottom.png);
+  background-size: cover;
+}
+.tab-bottom.active {
+  background-image: url(../img/tab-bottom-active.png);
+}
+.footer-area {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.imgWrapper {
+  display: flex;
+  align-items: center;
+}
+.logo-rightup {
+  width: 175px;
+}
+.logo-bottom-1 {
+  width: 144px;
+}
+.logo-bottom {
+  width: 175px;
+}
+.logo-brand {
+  width: 88px;
+}
+.btn-default {
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  background-image: none !important;
+  border: none;
+}
+.nav-tabs {
+  border: none;
+}
+.nav-tabs > li > a {
+  color: #000 !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+.nav-tabs > li.active > a {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0 4px 4px 0 !important;
+}
+.player-bg-1 {
+  width: 300px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate(-100px, 50px);
+}
+.abr {
+  padding-top: 10px;
+}
+.method-title {
+  font-size: 18px;
+  color: #fff;
+}
+.btn-item {
+  width: 115px;
+  height: 48px;
+  background: #4d4d4d;
+  color: #fff;
+  border-radius: 4.25px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 12px;
+}
+.btn-item:first-child {
+  margin-top: 0;
+}
+.circle {
+  box-sizing: border-box;
+  border: 2.5px solid #fff;
+  display: inline-block;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #000;
+}
+.text-primary {
+  margin-bottom: 2px;
 }

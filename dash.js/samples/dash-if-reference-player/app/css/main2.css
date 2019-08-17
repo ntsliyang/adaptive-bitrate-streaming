@@ -1,7 +1,7 @@
 body {
-    background: #eee;
-    min-width: 320px;
-    overflow-x: hidden;
+    background: #fffdf4;
+    min-width: 1366px;
+    display: flex;
 }
 
 label input {
@@ -18,11 +18,11 @@ a:hover {
 }
 
 .container {
-    max-width: 1600px;
+    width: 1162px;
 }
 
 .btn:focus {
-    outline: none;
+  outline: none;
 }
 
 /****************************
@@ -56,7 +56,7 @@ a:hover {
         OPTIONS PANEL
 *****************************/
 .options-show {
-    /*height: 200px;*/
+    height: 200px;
     transition-property: all;
     transition-duration: .5s;
 }
@@ -76,7 +76,7 @@ a:hover {
     background-color: #dfe2e2;
     margin: 2px;
     padding: 5px;
-    min-height: 230px;
+    min-height: 195px;
     float: left;
 }
 
@@ -103,7 +103,7 @@ a:hover {
 }
 
 .options-item-body {
-    width: 230px;
+    width: 200px;
     height: 145px;
     margin: 5px;
 }
@@ -118,9 +118,16 @@ a:hover {
     margin-bottom: 7px;
     margin-right: 0px;
     margin-left: 0px;
+    margin-top: -20px;
+    display: flex;
+    align-items: flex-end;
+    background-image: url(../img/player-bg.png);
+    background-size: cover;
+    height: 380px;
+    position: relative;
 }
 
-.dash-video-player {
+.dash-video-player, .dash-video-player2 {
     background-color: #000000;
 }
 
@@ -139,6 +146,8 @@ a:hover {
 
 .video-controller {
     margin-top: -5px !important;
+    min-height: 25px !important;
+    max-height: 30px;
 }
 
 .btn-play-pause,
@@ -200,6 +209,12 @@ chart, chart canvas {
     height: 185px;
 }
 
+chart2, chart2 canvas {
+  display: block;
+  width: 100%;
+  height: 185px;
+}
+
 #chart-inventory {
     position:relative;
 }
@@ -216,14 +231,20 @@ chart, chart canvas {
     padding-left: 15px;
 }
 
-#chartWrapper{
+#chartWrapper {
     padding: 15px;
+}
+#chartWrapper2 {
+  padding: 0 15px 15px;
 }
 
 .chartPanel {
     background-color: #fff;
     margin-top: 15px;
     margin-bottom: 15px;
+    border: 5px solid #000;
+    border-radius: 20px;
+    position: relative;
 }
 
 button#disable-chart-btn {
@@ -245,14 +266,8 @@ div#legend-wrapper {
     display: block;
 }
 
-.footer-area {
-    background-color: #ffffff;
-}
-
 .footer-text img {
-    height: 100px;
-    padding: 5px;
-    padding-top: 20px;
+    height: 40px;
 }
 
 .footer-area a {
@@ -342,103 +357,6 @@ div#legend-wrapper {
     }
 }
 
-
-
-/****************************
-MOBILE SOURCE MENU MODAL LIST
-*****************************/
-
-.modal-list {
-    height: 100%;
-    overflow: scroll;
-    background: white;
-    list-style: none;
-    padding: 15px;
-    font-size: 16px;
-
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
-}
-
-.modal-list > ul {
-    padding: 15px;
-}
-
-.modal-list > ul > li {
-    margin-bottom: 20px;
-    list-style: none;
-    font-size: 20px;
-    font-weight: 200;
-    padding: 10px 0;
-    cursor: pointer;
-    border-bottom: 3px solid #999;
-}
-
-.modal-list > ul > li > span {
-    font-weight: 900;
-    margin-bottom: 8px;
-}
-
-.modal-list > ul > li > ul > li {
-    border-top: 1px solid #ccc;
-    padding: 6px 0;
-}
-
-/****************************
-        DESKTOP MENU
-*****************************/
-
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu > .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
-    max-height: 300px;
-    overflow: auto;
-}
-
-.dropdown-submenu:hover > .dropdown-menu {
-    display: block;
-}
-
-.dropdown-submenu > a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #ccc;
-    margin-top: 5px;
-    margin-right: -10px;
-}
-
-.dropdown-submenu:hover > a:after {
-    border-left-color: #fff;
-}
-
-.dropdown-submenu.pull-left {
-    float: none;
-}
-
-.dropdown-submenu.pull-left > .dropdown-menu {
-    left: -100%;
-    margin-left: 10px;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;
-}
-
 /********************************************************
 CONTROL BAR CSS NEEDS TO MOVE INTO THE CONTROL BAR
 *********************************************************/
@@ -518,4 +436,231 @@ CONTROL BAR CSS NEEDS TO MOVE INTO THE CONTROL BAR
     list-style: none;
     font-size: .9em !important;
     padding: 0px;
+}
+.leftBar {
+  flex-shrink: 0;
+  width: 80px;
+  background: #000;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainContainer {
+  padding: 30px 30px 60px;
+  margin: 0 auto;
+}
+.logo-leftup, .logo-leftbottom {
+  width: 40px;
+}
+.leftmiddle-wrapper {
+  width: 100%;
+}
+.tab-up-wrapper, .tab-bottom-wrapper  {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+.tab-up-wrapper.active {
+  background: #fff;
+}
+.tab-bottom-wrapper.active {
+  background: #fff;
+}
+.tab-up {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/tab-up.png);
+  background-size: cover;
+}
+.tab-up.active {
+  background-image: url(../img/tab-up-active.png);
+}
+.tab-bottom {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/tab-bottom.png);
+  background-size: cover;
+}
+.tab-bottom.active {
+  background-image: url(../img/tab-bottom-active.png);
+}
+.footer-area {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-area .logo-leftbottom {
+  transform: rotate(90deg);
+}
+.imgWrapper {
+  display: flex;
+  align-items: center;
+}
+.logo-rightup {
+  width: 175px;
+}
+.logo-bottom-1 {
+  width: 144px;
+}
+.logo-bottom {
+  width: 175px;
+}
+.logo-brand {
+  width: 88px;
+}
+.dash-video-player {
+  width: 600px;
+  height: 320px;
+  display: flex;
+  margin-left: 80px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  border-radius: 21px;
+}
+.dash-video-player2 {
+  width: 345px;
+  height: 225px;
+  margin-bottom: 20px;
+    border-radius: 21px;
+}
+.btn-item {
+  width: 115px;
+  height: 48px;
+  background: #4d4d4d;
+  color: #fff;
+  border-radius: 4.25px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 12px;
+}
+.btn-item:first-child {
+  margin-top: 0;
+}
+.circle {
+  box-sizing: border-box;
+  border: 2.5px solid #fff;
+  display: inline-block;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #000;
+}
+.playAll {
+  position: absolute;
+  left: 65%;
+  top: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playAll .icon-play {
+  font-size: 40px;
+}
+.playAll .icon-pause {
+  font-size: 40px;
+}
+.abr {
+  padding-top: 10px;
+}
+.method-title {
+  font-size: 18px;
+  color: #fff;
+}
+.red-dots-wrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(30%, -40%);
+}
+.red-dots {
+  width: 100px;
+}
+.yellow-wrapper {
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  transform: translate(-40px, 30px);
+  background: #ffd544;
+}
+.dots {
+  width: 100px;
+}
+.dots-wrapper {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  transform: translate(-40px, 45px);
+}
+#videoController2 {
+  display: flex;
+}
+#videoController2 > div {
+  flex-shrink: 1;
+  float: none;
+}
+#videoController2 > input {
+  flex-shrink: 1;
+  float: none;
+}
+#videoController2 > span {
+  flex-shrink: 1;
+  float: none;
+}
+video {
+  max-height: 250px;
+}
+
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+}
+
+.smooth {
+    float: right;
+    color: white;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+.balanced {
+    float: right;
+    color: white;
+    margin-right: 20px;
+    margin-top: 45px;
+}
+
+.high-quality {
+    float: right;
+    color: white;
+    margin-right: 20px;
+    margin-top: 45px;
+}
+
+.demo {
+    /*float: right;*/
+    color: white;
+    /* background-color: dimgrey; */
+    /*padding-top: 160px;*/
+    margin-left: auto;
+    font-size: 18px;
 }
