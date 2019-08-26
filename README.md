@@ -1,7 +1,7 @@
-# Quality-aware Media Streaming Optimization (based on [Pensieve](https://github.com/hongzimao/pensieve))
+# Quality-aware Media Streaming Optimization (based on [Pensieve](https://github.com/hongzimao/pensieve))[[slide](slide/final.pptx)]
 
 ## Table of Contents
-- [Quality-aware Media Streaming Optimization (based on Pensieve)](#quality-aware-media-streaming-optimization-based-on-pensieve)
+- [Quality-aware Media Streaming Optimization (based on Pensieve)[slide]](#quality-aware-media-streaming-optimization-based-on-pensieveslide)
 	- [Table of Contents](#table-of-contents)
 	- [Objectives](#objectives)
 	- [Setup](#setup)
@@ -27,8 +27,8 @@
 ## Objectives 
 -  Recreate the [real-world experiments](https://github.com/hongzimao/pensieve#real-world-experiments) 
 -  Customize the adaptation algorithms for different needs (smooth, balanced, high-quality)
--  Optimize the current ABR algorithm (based on RL) so that it could be applied in live streaming environment (desired ABR algorithm could enable the video to have smooth playback while retaining a much smaller buffer level than playback environment)
-- Gather a much larger dataset
+-  Optimize the current ABR algorithm (based on RL) so that it could be applied in HLS (HTTP Live Streaming) (desired ABR algorithm could enable the video to have smooth playback while retaining a much smaller buffer level than playback environment)
+- Gather a much larger dataset ([FCC](https://www.fcc.gov/reports-research/reports/measuring-broadband-america), [Belgium](http://users.ugent.be/~jvdrhoof/dataset-4g/logs/logs_all.zip), [Oboe](https://github.com/USC-NSL/Oboe), [Waterloo Streaming QoE Dataset](https://ece.uwaterloo.ca/~zduanmu/jstsp16qoe/))
 
 ## Setup
 
@@ -69,6 +69,7 @@ sudo service restart apache2
 #### Installation & Basic Setup
 - download [Apache Lounge](http://www.apachelounge.com/download/)
 - download [Apache Haus](https://www.apachehaus.com/cgi-bin/download.plx) and unzip the file under specific disk location
+- more details can be viewed in [`windows-pensieve/`](windows-pensieve/)
 
 ### Mac
 
@@ -126,7 +127,7 @@ The following table shows corresponding changes.
   - add parantheses around `print` statements
   - all the `open` commands are changed from `wb` (or `rb`) to `w` (or `r`)
 - Under [`rl_server/`](rl_server/) and [`rl_server_bbb_30fps/`](rl_server_bbb_30fps/), programs used to build backend server for transfer of state information include
-  
+ 
 |File Name|Supported Algorithm|
 |--|--|
 |[`dash_server_original.py`](rl_server_bbb_30fps/dash_server_original.py)||
@@ -134,8 +135,9 @@ The following table shows corresponding changes.
 |[`robust_mpc_server.py`](rl_server_bbb_30fps/robust_mpc_server.py)|robustMPC|
 |[`rl_server_no_training.py`](rl_server_bbb_30fps/rl_server_no_training.py)|A3C (RL)|
 |[`simple_server.py`](rl_server_bbb_30fps/simple_server.py)||
+
   - The following changes should be applied in all files above
-  
+
   |Location|Original|Current|
   |--|--|--|
   |first two lines|<code>from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer<br>import SocketServer</code>|<code>from http.server import BaseHTTPRequestHandler, HTTPServer<br>import socketserver</code>|
@@ -178,9 +180,11 @@ python rl_server_bbb_30fps/simple_sever.py
 
 ![6-level quality video of 120-130k epochs](img/3.png)
 
-All of 3 reward schemes show very high instability, and this is partially reflected in the frequent changes of bitrates in the video client. 
+All of 3 reward schemes show very high instability, and this is partially reflected in the frequent changes of bitrates by the video client.
 
 ## Future Work
+- As described in [Training Results](#training-results), the training curves oscillate significantly. Therefore, [this issue](https://github.com/hongzimao/pensieve/issues/76) suggests variance reduction, detailed in [Variance Reduction for Reinforcement Learning in Input-Driven Environments](https://openreview.net/forum?id=Hyg1G2AqtQ).
+- Create a model ensemble consisting of other RL models, including [PPO](https://github.com/godka/Pensieve-PPO2), VPG, [DQN](https://github.com/godka/ABR-DQN) and DQN-based framework [D-DASH](https://ieeexplore.ieee.org/abstract/document/8048013). 
 
 ## Dependency
 - Python 3.7
@@ -193,4 +197,4 @@ All of 3 reward schemes show very high instability, and this is partially reflec
 - Windows Apache Setup (zh-CN)
   - Installation & Setup of VC14 and Apache Lounge: https://blog.csdn.net/liyang4534/article/details/78036591
   - Installation & Setup of Apache Haus: https://blog.csdn.net/weixin_43738701/article/details/86607148
-- Installation & Setup of Chomedriver and Selenium on Windows (https://blog.csdn.net/Booboochen/article/details/80531155
+- Installation & Setup of Chomedriver and Selenium on Windows: https://blog.csdn.net/Booboochen/article/details/80531155
